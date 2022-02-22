@@ -3,6 +3,7 @@ import Dice from "./components/Dice"
 import Win from "./components/Win"
 
 export default function App() {
+  //Generates new set of die, new game
   function genNewDice(){
     //Generate 10 new dice
     const die =[]
@@ -16,12 +17,12 @@ export default function App() {
     }
     return die
   }
-
+  //States used
   const [dice, setDice] = React.useState(genNewDice())
   const [tenzie, setTenzie] = React.useState({tenzie: false, numRolls: 0})
   const [timer, setTimer] = React.useState(Date.now())
   
-
+  //Random Number from 1-6
   function genRand(){
     const maxNumber = 6
     const minNumber = 1
@@ -36,7 +37,7 @@ export default function App() {
       ...die, number: die.frozen? die.number:genRand()
     })))
   }
-
+  //Holds dice to not get rolled
   function freeze(event, id){
     const newDice= []
     for (let i =0; i < dice.length; i++){
@@ -54,7 +55,8 @@ export default function App() {
     }
     setDice(newDice)
   }
-
+  //Checks if all the dice are the same
+  //Checks also if new time is a new high score
   function checkWin(){
     // console.log(dice)
     for (let i =1; i< dice.length; i ++){
@@ -62,8 +64,9 @@ export default function App() {
         return false
       }
     }
-
-    if (timePassed < (JSON.parse(localStorage.getItem("bestTime")))){
+    const bestTime = JSON.parse(localStorage.getItem("bestTime"))
+    //If best time doesnt exist or the users new time is better
+    if (!bestTime || timePassed < bestTime){
       localStorage.setItem("bestTime", JSON.stringify(timePassed))
     }
 
@@ -76,7 +79,7 @@ export default function App() {
     setTimer(Date.now())
     // console.log(dice)
   }
-
+  //Creates JSX die elements
   const diceElements = dice.map(d =>
     <Dice 
       key = {d.id}
@@ -87,6 +90,7 @@ export default function App() {
       style = {{backgroundColor: d.frozen? "lightskyblue":"white"}}
       />)
   
+  //checks for tenzie/win every time Dice is changed
   React.useEffect(()=>{
     setTenzie(prev => ({...prev , tenzie: checkWin() ? true:false}))
     // {console.log(tenzie.numRolls)}
