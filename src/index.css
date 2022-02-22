@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(10,31,46);
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+
+.app{
+  background-color: rgb(222,222,222);
+  
+  /* width:100%; */
+  /* max-width: 800px; */
+  height:100%;
+  padding:20px;
+  /* padding-bottom: 100%; */
+  border-radius: 7px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice{
+  
+  /* flex: 1 0 20%; */
+  height: 60px;
+  width: 60px;
+  font-size: 50px;
+  border-radius: 5px;
+  padding:4px;
+  box-shadow: -1.5px 5px 5px black;
+  cursor: pointer;
+  
+}
+
+.dice-container{
+  display:grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+.roll-butn{
+  cursor: pointer;
+  margin-top: 30px;
+  height:60px;
+  width: 180px;
+  background-color: rgb(81, 0, 233);
+  font-size: 30px;
+  display:flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -1.5px 5px 5px black;
+}
+
+.win-banner{
+  height: 90%;
+  width:90%;
+  /* padding:20px; */
+  background-color: rgb(222,222,222);
+  position:absolute;
+
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  font-size: 30px;
+
+}
+.play-again{
+  cursor: pointer;
+  font-size: 40px;
+  width:200px;
+  background-color: rgb(81, 0, 233);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  
+  margin-inline: auto;
+  box-shadow: -1.5px 5px 5px black;
+  
+}
+
+header{
+ 
+  text-align: center;
+}
+
+.dot{
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color:black;
+}
+
+.die-one{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.die-two{
+  display: flex;
+  justify-content : space-between;
+}
+.die-two .dot:nth-of-type(1) {
+  align-self: flex-end;
+  }
+.die-three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.die-three  .dot:nth-of-type(1) {
+  align-self :flex-end;
+}
+
+.die-three  .dot:nth-of-type(2) {
+  align-self :center;
+}
+
+.die-four , .die-six, .die-five{
+  display: flex;
+  justify-content: space-between;
+}
+
+.die-four .column , .die-six .column, .die-five .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.die-five .column:nth-of-type(2) {
+  justify-content: center;
+}
