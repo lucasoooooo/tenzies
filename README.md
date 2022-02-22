@@ -21,3 +21,8 @@ To play the game, you can click on the different dice that you dont want to re r
  ![alt text](./images/Win-Screen.png)
 
  The time you take is compared to a best time and save the quickest time locally with "localstorage" in React. This allows for the same player or a different player to play again, and try to race for a better time.
+
+### Sources
+A lot of the material and inspieration covered in this project was learned from freeCodeCamp.org
+
+Video with a large amount of the material: https://youtu.be/bMknfKXIFA8
