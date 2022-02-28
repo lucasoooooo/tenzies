@@ -1,6 +1,9 @@
 # tenzies
 Rolling dice game for show casing some Javascript React framework elements
 
+## Try game here!
+https://lucasoooooo.github.io/tenzies/
+
 ## Start Screen
 When you first open the page, you will instantly be prompted with the game. 
 
